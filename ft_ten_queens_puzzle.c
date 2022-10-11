@@ -6,12 +6,11 @@
 /*   By: lcalvie <lcalvie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 15:19:02 by lcalvie           #+#    #+#             */
-/*   Updated: 2022/10/11 15:19:13 by lcalvie          ###   ########.fr       */
+/*   Updated: 2022/10/11 15:23:02 by lcalvie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
 
 void	ft_ten_queens_puzzle_rec(char t[11], int n, int *count, int i)
 {
