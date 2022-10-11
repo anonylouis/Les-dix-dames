@@ -6,7 +6,7 @@
 /*   By: lcalvie <lcalvie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 15:19:02 by lcalvie           #+#    #+#             */
-/*   Updated: 2022/10/11 15:50:10 by lcalvie          ###   ########.fr       */
+/*   Updated: 2022/10/11 16:01:07 by lcalvie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_ten_queens_puzzle_rec(char t[11], int n, int *count, int i)
 				return (*count);
 	}
 	if (n > 9)
-		return (write(1, t, 11), (*count)++, *count);
+		return (write(1, t, 11), ++(*count));
 	t[n] = '/';
 	while ((++t[n]) <= '9')
 		ft_ten_queens_puzzle_rec(t, n + 1, count, -1);
@@ -33,10 +33,9 @@ int	ft_ten_queens_puzzle_rec(char t[11], int n, int *count, int i)
 
 int	ft_ten_queens_puzzle(void)
 {
-	char	t[11];
-	int		count;
+	char	t[15];
 
-	count = 0;
+	*((int *)(t + 11)) = 0;
 	t[10] = '\n';
-	return (ft_ten_queens_puzzle_rec(t, 0, &count, -1));
+	return (ft_ten_queens_puzzle_rec(t, 0, (int *)(t + 11), -1));
 }
